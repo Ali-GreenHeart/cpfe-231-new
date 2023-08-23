@@ -3,3 +3,9 @@ h1{
     color: orangered;
     text-shadow: 0 0 5px yellow;
 }
+
+h2{
+    text-align: center;
+    color: green;
+    text-shadow: 0 0 5px lime;
+}
