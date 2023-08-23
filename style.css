@@ -1,8 +1,20 @@
 h1{
-    color: green;
     text-align: center;
+    color: orangered;
+    text-shadow: 0 0 5px yellow;
 }
-p{
-    max-width: 400px;
+
+h2{
+    text-align: center;
+    color: green;
+    text-shadow: 0 0 5px lime;
+}
+
+img{
+    width: 200px;
+    height: 120px;
+    object-fit: cover;
+    display: block;
     margin: 0 auto;
+    border-radius: 10px;
 }
