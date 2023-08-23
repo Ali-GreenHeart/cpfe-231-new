@@ -9,3 +9,12 @@ h2{
     color: green;
     text-shadow: 0 0 5px lime;
 }
+
+img{
+    width: 200px;
+    height: 120px;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
+    border-radius: 10px;
+}
