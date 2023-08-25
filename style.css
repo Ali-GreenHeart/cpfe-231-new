@@ -1,20 +1,67 @@
-h1{
-    text-align: center;
-    color: orangered;
-    text-shadow: 0 0 5px yellow;
+.alert {
+  padding: 10px 20px;
+  border: 10px solid black;
+  border-radius: 0px;
+  text-align: center;
+  font-family: cursive;
+  font-size: 32px;
+  background-color: gray;
+}
+.alert:hover {
+  background-color: rgba(83, 83, 83, 0.8265);
+  cursor: pointer;
+  color: white;
+  transition: transform 0.4s;
+  transform: scale(0.9);
 }
 
-h2{
-    text-align: center;
-    color: green;
-    text-shadow: 0 0 5px lime;
+.alert-primary {
+  padding: 10px 20px;
+  border: 10px solid blue;
+  border-radius: 10px;
+  text-align: center;
+  font-family: cursive;
+  font-size: 32px;
+  background-color: #8080ff;
+}
+.alert-primary:hover {
+  background-color: rgba(83, 83, 255, 0.8265);
+  cursor: pointer;
+  color: white;
+  transition: transform 0.4s;
+  transform: scale(0.9);
 }
 
-img{
-    width: 200px;
-    height: 120px;
-    object-fit: cover;
-    display: block;
-    margin: 0 auto;
-    border-radius: 10px;
+.alert-success {
+  padding: 10px 20px;
+  border: 10px solid green;
+  border-radius: 14px;
+  text-align: center;
+  font-family: cursive;
+  font-size: 32px;
+  background-color: #80c080;
 }
+.alert-success:hover {
+  background-color: rgba(83, 169, 83, 0.8265);
+  cursor: pointer;
+  color: white;
+  transition: transform 0.4s;
+  transform: scale(0.9);
+}
+
+.alert-danger {
+  padding: 10px 20px;
+  border: 10px solid red;
+  border-radius: 30px;
+  text-align: center;
+  font-family: cursive;
+  font-size: 32px;
+  background-color: #ff8080;
+}
+.alert-danger:hover {
+  background-color: rgba(255, 83, 83, 0.8265);
+  cursor: pointer;
+  color: white;
+  transition: transform 0.4s;
+  transform: scale(0.9);
+}/*# sourceMappingURL=style.css.map */
