@@ -1,40 +1,24 @@
-@mixin transform($property) {
-    -webkit-transform: $property;
-    -ms-transform: $property;
-    transform: $property;
-}
-
-@mixin alert($border-color, $brd-radius) {
+.alert {
     padding: 10px 20px;
-    border: 10px solid $border-color;
-    border-radius: $brd-radius;
+    border: 10px solid black;
     text-align: center;
     font-family: cursive;
     font-size: 32px;
-    background-color: mix($border-color, white);
+    background-color: mix(black, white);
 
     &:hover {
         background-color:
-            mix($border-color, rgba(255, 255, 255, 0.653));
+            mix(black, rgba(255, 255, 255, 0.6));
         cursor: pointer;
         color: white;
         transition: transform 0.4s;
-        @include transform(scale(0.9));
     }
 }
-
-.alert {
-    @include alert(black, 0px);
-}
-
-.alert-primary {
-    @include alert(blue, 10px);
-}
-
-.alert-success {
-    @include alert(green, 14px);
-}
-
-.alert-danger {
-    @include alert(red, 30px);
+.alert-primary{
+    @extend .alert;
+    border-color: blue;
+    background-color: mix(blue, white);
+    &:hover{
+        background-color: mix(blue, rgba(255,255,255,0.6));
+    }
 }
