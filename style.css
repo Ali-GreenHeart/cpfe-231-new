@@ -1,22 +1,21 @@
-.alert, .alert-primary {
-  padding: 10px 20px;
-  border: 10px solid black;
+.card {
+  max-width: 220px;
+  box-shadow: 0 0 5px black;
+  border-radius: 8px;
+  position: relative;
+}
+.card > img {
+  width: 100%;
+  height: 220px;
+  border-radius: inherit;
+}
+.card > h3 {
   text-align: center;
   font-family: cursive;
   font-size: 32px;
-  background-color: gray;
 }
-.alert:hover, .alert-primary:hover {
-  background-color: rgba(77, 77, 77, 0.8);
-  cursor: pointer;
-  color: white;
-  transition: transform 0.4s;
-}
-
-.alert-primary {
-  border-color: blue;
-  background-color: #8080ff;
-}
-.alert-primary:hover {
-  background-color: rgba(77, 77, 255, 0.8);
+.card > .btn-container {
+  position: absolute;
+  right: 10px;
+  top: 10px;
 }/*# sourceMappingURL=style.css.map */
