@@ -1,159 +1,44 @@
-@mixin button($clr) {
-    width: 25px;
-    height: 25px;
-    border: 2px solid $clr;
-    background-color: mix($clr, white);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 4px;
+@mixin ImageDesign ($filter) {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    object-fit: cover;
+    transition: 300ms;
 
     &:hover {
-        background-color: mix($clr, #cece);
-        color: white;
+        transform: scale(0.9);
         cursor: pointer;
+        filter: $filter;
     }
 }
 
-.card {
-    max-width: 220px;
-    box-shadow: 0 0 5px black;
-    border-radius: 8px;
-    position: relative;
-
-    &>img {
-        width: 100%;
-        height: 220px;
-        border-radius: inherit;
-        object-fit: cover;
-    }
-
-    &>h3 {
-        text-align: center;
-        font-family: cursive;
-        font-size: 32px;
-        padding-bottom: 20px;
-        color: mix(orange, green);
-        text-shadow: 0 0 2px mix(lime, black);
-    }
-
-    &>.btn-container {
-        position: absolute;
-        right: 10px;
-        top: 10px;
-        display: flex;
-        gap: 1px;
-
-        &>.favorite {
-            @include button(red);
-        }
-
-        &>.close {
-            @include button(black);
-        }
-    }
+img {
+    @include ImageDesign(drop-shadow(16px 16px 20px blue))
 }
 
-.card-container {
-    display: flex;
-    max-width: 1100px;
-    margin: 0 auto;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 10px;
-    padding: 10px;
-}
-
-@media (max-width:600px) {
-    .card-container {
-        justify-content: center;
-        gap: 20px;
-    }
-}
-
-.modal-container {
-    display: none;
-    position: fixed;
-    inset: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.blurred-bg {
-    background-color: gray;
-    filter: blur(300px);
-    position: absolute;
-    inset: 0;
-}
-
-@mixin modalButton($clr, $isOutlined) {
-    text-align: center;
-    font-family: sans-serif;
-    text-transform: capitalize;
-    color: $clr;
-
-    @if $isOutlined {
-        background-color: transparent;
-    }
-
-    @else {
-        background-color: $clr;
-        color: white;
-    }
-
-    border: 1px solid $clr;
-    border-radius: 4px;
-    padding: 5px;
-    min-width: 100px;
+@mixin TextMixin ($bg-color, $color, $selection) {
+    background-color: $bg-color;
+    color: $color;
+    filter: blur(1.2px);
+    transition: 300ms;
 
     &:hover {
-        cursor: pointer;
+        filter: none;
+    }
 
-        @if $isOutlined {
-            background-color: mix( $clr,transparent );
+    @if $selection == true {
+        &::selection {
+            text-decoration: underline;
         }
-
-        @else {
-            background-color: mix($clr, black);
-            color: white;
-        }
-
     }
 }
 
-.modal {
-    position: relative;
-    z-index: 20;
-    flex-grow: 1;
-    max-width: 500px;
-    border-radius: 20px;
-    background-color: white;
-    padding: 20px;
-
-    &>.close {
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        @include button(black)
-    }
-
-    & .btn-container {
-        display: flex;
-        max-width: 300px;
-        margin: 0 auto;
-        gap: 5px;
-
-        & button {
-            flex-grow: 1;
-        }
-    }
-
-    & .cancel {
-        @include modalButton(#7C80D1, $isOutlined: true)
-    }
-
-    & .delete {
-        @include modalButton(red, $isOutlined: false)
-    }
+// mixin yaradin. onu include edende bu formada isler gorsun:
+// 1. include etdiyim selector-a back-col [black] , col[lime],
+// 2. text-i select edende altindan xett cekilsin (::selection)
+// 3. evvelceden filter blur verilsin, hover edende itsin. 
+// 4. bg-color ve color-u argument kimi alaq
+// 5. selection-in olub olmadigini argument kimi alaq
+h1 {
+    @include TextMixin(black, lime, $selection: true)
 }
