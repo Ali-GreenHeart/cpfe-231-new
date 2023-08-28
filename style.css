@@ -12,18 +12,19 @@ img:hover {
   filter: drop-shadow(16px 16px 20px blue);
 }
 
-h1 {
-  background-color: black;
-  color: lime;
-  filter: blur(1.2px);
-  transition: 300ms;
+body {
+  margin: 0;
 }
-h1:hover {
-  filter: none;
+
+.container {
+  box-sizing: border-box;
+  display: flex;
+  height: 100vh;
+  gap: 10px;
+  padding: 20px;
 }
-h1::-moz-selection {
-  text-decoration: underline;
-}
-h1::selection {
-  text-decoration: underline;
+.container > iframe {
+  flex-grow: 1;
+  border-radius: 30px;
+  border: 20px solid purple;
 }/*# sourceMappingURL=style.css.map */
